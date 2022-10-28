@@ -1,0 +1,34 @@
+Question 16. Perform inner join, left join and right join based on the agent column and after joining the table export that data into your local system.
+
+
+hive> insert overwrite local directory '/tmp/hive_class/innerjoinresult'
+    > row format delimited
+    > fields terminated by ','
+    > select a.agent_name,b.date,b.logintime,b.logouttime
+    > from agentperformance a
+    > inner join agentlogingreport b
+    > on a.agent_name = b.agent
+    > and from_unixtime(unix_timestamp(a.date,'M/d/yyyy'),'d-MMM-yy') = b.date
+    > order by a.agent_name, b.date;
+
+
+hive> insert overwrite local directory '/tmp/hive_class/leftjoinresult'
+    > row format delimited
+    > fields terminated by ','
+    > select a.agent_name,b.date,b.logintime,b.logouttime
+    > from agentperformance a
+    > left join agentlogingreport b
+    > on a.agent_name = b.agent
+    > and from_unixtime(unix_timestamp(a.date,'M/d/yyyy'),'d-MMM-yy') = b.date
+    > order by a.agent_name, b.date;
+
+
+hive> insert overwrite local directory '/tmp/hive_class/rightjoinresult'
+    > row format delimited
+    > fields terminated by ','
+    > select a.agent_name,b.date,b.logintime,b.logouttime
+    > from agentperformance a
+    > right join agentlogingreport b
+    > on a.agent_name = b.agent
+    > and from_unixtime(unix_timestamp(a.date,'M/d/yyyy'),'d-MMM-yy') = b.date
+    > order by a.agent_name, b.date;
