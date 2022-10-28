@@ -1,0 +1,4 @@
+Question 7. Total Feedback that each agent have received
+
+
+hive> select agent_name, sum(total_feedback) as total_feedback from agentperformance group by agent_name;
