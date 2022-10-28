@@ -1,0 +1,6 @@
+Question 2. Dump the data inside the hdfs in the given schema location.
+
+
+hive> load data local inpath 'file:///tmp/hive_class/AgentLogingReport.csv' into table agentlogingreport;
+
+hive> load data local inpath 'file:///tmp/hive_class/AgentPerformance.csv' into table agentperformance;
