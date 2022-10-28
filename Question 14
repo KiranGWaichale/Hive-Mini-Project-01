@@ -1,0 +1,4 @@
+Question 14. Find the number of chat on which they have received a feedback 
+
+
+hive> select agent_name, sum(total_feedback) from agentperformance group by agent_name;
