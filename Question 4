@@ -1,0 +1,4 @@
+Question 4. Find out agent average rating.
+
+
+hive> select agent_name, round(avg(average_rating),2) from agentperformance group by agent_name;
