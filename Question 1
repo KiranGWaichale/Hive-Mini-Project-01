@@ -1,0 +1,32 @@
+Question 1. Create a schema based on the given dataset
+
+hive> create table agentlogingreport
+    > (
+    > sl_no int,
+    > agent string,
+    > date string,
+    > logintime string,
+    > logouttime string,
+    > duration string
+    > )
+    > row format delimited
+    > fields terminated by ','
+    > tblproperties('skip.header.line.count'='1');
+    
+    
+hive> create table agentperformance
+    > (
+    > sl_no int,
+    > date string,
+    > agent_name string,
+    > total_chats int,
+    > average_response_time string,
+    > average_resolution_time string,
+    > average_rating float,
+    > total_feedback int
+    > )
+    > row format delimited
+    > fields terminated by ','
+    > tblproperties('skip.header.line.count'='1');
+    
+    
