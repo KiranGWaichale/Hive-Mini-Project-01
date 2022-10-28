@@ -1,0 +1,6 @@
+Question 9. Agent name who have rating less than 3.5
+
+
+hive> with tbl as
+    > ( select agent_name, avg(average_rating) over (partition by agent_name) avg_rating from agentperformance )
+    > select distinct agent_name from tbl where avg_rating < 3.5;
