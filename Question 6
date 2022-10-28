@@ -1,0 +1,4 @@
+Question 6. Total query that each agent have taken
+
+
+hive> select agent_name, sum(total_chats) as total_query from agentperformance group by agenct_name;
