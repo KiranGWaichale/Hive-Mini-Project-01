@@ -1,0 +1,4 @@
+Question 5. Total working days for each agents 
+
+
+hive> select agent, count(distinct date) as total_working_days from agentlogingreport group by agent;
