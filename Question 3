@@ -1,0 +1,4 @@
+Question 3. List of all agents' names.
+
+
+hive> select distinct agent from agentlogingreport;
