@@ -1,0 +1,10 @@
+Question 8. Agent name who have average rating between 3.5 to 4 
+
+
+hive> with tbl as
+    > ( select agent_name, avg(average_rating) over (partition by agent_name) avg_rating from agentperformance )
+    > select distinct agent_name from tbl where avg_rating between 3.5 and 4;
+    
+    
+ 
+hive> select agent_name, avg(average_rating) as avg_rating from agentperformance group by agent_name having avg_rating between 3.5 and 4;
