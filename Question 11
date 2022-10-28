@@ -1,0 +1,6 @@
+Question 11. How many feedback agents have received more than 4.5 average
+
+
+hive> with tbl as
+    > ( select agent_name, avg(average_rating) over (partition by agent_name) avg_rating from agentperformance )
+    > select count(distinct agent_name) from tbl where avg_rating > 4.5
