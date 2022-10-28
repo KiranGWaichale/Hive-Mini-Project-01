@@ -1,0 +1,1 @@
+Question 17. Perform partitioning on top of the agent column and then on top of that perform bucketing for each partitioning.
